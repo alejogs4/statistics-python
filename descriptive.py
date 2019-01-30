@@ -5,8 +5,11 @@ from math import sqrt
 
 # Consigue el valor medio de un conjunto de datos
 def median(sample):
-  length = len(sample)
-  return length + 1 / 2
+  length = len(sample) - 1
+  if (length % 2 == 0):
+    return (sample[ length / 2 ] + sample[ (length / 2) + 1 ]) / 2
+
+  return  sample[ (length + 1) / 2 ]
 
 # Consigue el promedio de un conjunto de datos
 def average(sample):
@@ -42,7 +45,4 @@ def standard_deviation(sample):
   sample_variance = variance(sample)
   return sqrt(sample_variance)
 
-# sample = [{'data': 6.2, 'weight': 0.3},{'data': 6.5, 'weight': 0.3},{'data': 5.8, 'weight': 0.4}]
-# print(mode([1,2,3,4,5, 5]))
-# print(weighted_average(sample))
 
