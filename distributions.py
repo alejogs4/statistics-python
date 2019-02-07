@@ -48,3 +48,6 @@ def norm(deviation, average, x1, x2):
   constant = 1 / (sqrt(2 * pi) * deviation)
 
   return constant * result
+
+def get_z(x_, average, deviation, n):
+    return (x_ - average) / (deviation / sqrt(n))
