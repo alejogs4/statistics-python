@@ -44,7 +44,6 @@ def uniform(x1, x2, greather, less):
 def norm(deviation, average, x1, x2):
   inte = integrate.quad(lambda x : pow(e,-0.5 * (pow(x - average, 2) / pow(deviation, 2)) ), x1, x2)
   result = inte[0]
-  print(result)
   constant = 1 / (sqrt(2 * pi) * deviation)
 
   return constant * result
