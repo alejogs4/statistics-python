@@ -34,7 +34,7 @@ def proof_diff_means_t(variance1, variance2, n1, n2, mean1, mean2, t):
   sp = ( (variance1 * (n1 - 1)) + variance2*(n2 - 1) ) / (n1 + n2 - 2)
   difference = mean1 - mean2
   error = sqrt( (sp / n1) + (sp / n2) )
-
+  
   minimun = difference - t*error
   maximun = difference + t*error
 
@@ -55,7 +55,7 @@ def get_size_to_estimate_population_diff_means(z, variance1, variance2, error):
 def get_size_to_estimate_population_diff_proportions(z, p1, p2, error):
   p_operations = ( p1*(1-p1) + p2*(1-p2) )
 
-  return (pow(z, 2) * p_|operations) / pow(error, 2)
+  return (pow(z, 2) * p_operations) / pow(error, 2)
 
 def proof_hip_means_different_samples(mean1, mean2, meanp1, meanp2, variance1, variance2, n1, n2):
   error = sqrt( (variance1 / n1) + (variance2 / n2)  )
@@ -63,8 +63,8 @@ def proof_hip_means_different_samples(mean1, mean2, meanp1, meanp2, variance1, v
   return ((mean1 - mean2) - ( meanp1 - meanp2 )) / error
 
 def proof_little_sample_two(mean1, mean2, meanp1, meanp2, variance1, variance2, n1, n2):
-    sp = (variance1 * (n1 - 1) + variance2*(n2 - 1)) / (n1 + n2 - 2)
-  error = sqrt( (sp / n1) + (sp / n2)  )
+  sp = (variance1 * (n1 - 1) + variance2*(n2 - 1)) / (n1 + n2 - 2)
+  error = sqrt((sp / n1) + (sp / n2))
 
   return ((mean1 - mean2) - ( meanp1 - meanp2 )) / error
 
@@ -77,7 +77,7 @@ def proof_little_sample_two(mean1, mean2, meanp1, meanp2, variance1, variance2, 
 
 #   suma = []
 #   for i in range(0, len(sample1)):
-#     suma.append(sample1[i] + sample2[i])
+#     suma.append(sample1[i] - sample2[i])
 
 #   d = reduce(lambda a,b: a + b, suma) / n
 #   d2 = reduce(lambda a,b: a + b,map(lambda a: a**2, sum))
