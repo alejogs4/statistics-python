@@ -14,7 +14,7 @@ def binomial_distribution(length, succes_probability, number_succes):
 # Se toma cuando en la distrubucion binomial se pide encontrar la probabilidad de algun rango, por ejemplo x < 3
 # se pone [0,1,2,3]
 def acumulated_binomial(cases, length, succes_probability):
-  cases_binomial = map(lambda x: binomial_distribution(length, succes_probability, x), cases)
+  cases_binomial = map(lambda x: binomial_distribution(length, succes_probability, float(x)), cases)
   probability = reduce(lambda a,b: a + b, cases_binomial)
 
   return probability
@@ -50,3 +50,9 @@ def norm(deviation, average, x1, x2):
 
 def get_z(x_, average, deviation, n):
     return (x_ - average) / (deviation / sqrt(n))
+
+def when_get_x(average, deviation, percent):
+  from scipy.stats import norm
+  return norm(average, deviation).ppf(percent)
+  
+

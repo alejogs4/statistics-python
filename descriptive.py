@@ -13,10 +13,10 @@ def median(sample):
 
 # Consigue el promedio de un conjunto de datos
 def average(sample):
-  sum = reduce(lambda a,b: a + b, sample)  
+  _sum = reduce(lambda a,b: a + b, sample)  
   length = len(sample)
   
-  return sum / length
+  return _sum / length
 
 # Consigue el promedio teniendo en cuenta el peso de cada elemento
 def weighted_average(sample):

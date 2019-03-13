@@ -1,5 +1,12 @@
 from math import sqrt, pow
 from distributions import norm
+
+
+
+def get_hipotesis_p(p_sample, p_hipotesis, n):
+  sp = sp = sqrt((p_hipotesis * (1 - p_hipotesis)) / n)
+  return (p_sample - p_hipotesis) / sp
+
 # Se usa esto cuando se quiere obtner el valor de z
 # En una prueba de dos colas, permitiendo tomar una decision
 # Tambien puede ser usado para conseguir el valor de t
@@ -7,7 +14,6 @@ def get_z_two_queues(sample_mean, population_mean_null, deviation, length):
   standard_error = deviation / sqrt( length )
 
   return (sample_mean - population_mean_null) / standard_error
-
 
 
 def get_p(sample_mean, population_mean_null, deviation, length, one = True):
@@ -20,7 +26,9 @@ def get_p(sample_mean, population_mean_null, deviation, length, one = True):
 def proof_pi(proportion_sample, proportion_population, length):
   error = sqrt( (proportion_population * ( 1- proportion_population )) / length )
   return (proportion_sample - proportion_population) / error
-
+'''
+Si en vez de la varianza se tiene la desviacion estandar se tienen que elevar antes  de pasarla a la funcion
+'''
 def proof_diff_means(mean1, mean2, z, variance1, variance2, n1, n2):
   error = sqrt( (variance1 / n1) + (variance2 / n2) )
   difference = mean1 - mean2
