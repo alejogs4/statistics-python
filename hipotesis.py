@@ -47,6 +47,11 @@ def proof_diff_means_t(variance1, variance2, n1, n2, mean1, mean2, t):
   maximun = difference + t*error
 
   return minimun, maximun
+'''
+Si me da la varianza elevar a **0.5
+'''
+def degree_free_variance_diff(s1, s2, n1, n2):
+  return pow((pow(s1, 2) / n1) + (pow(s2,2) / n2), 2) / ((pow(s1**2 / n1, 2) /(n1 - 1)) + (pow(s2**2 / n2, 2) /(n2 - 1)))
 
 def proof_diff_proportions(p1, p2, n1, n2, z):
   error = sqrt( ((p1*(1-p1)) / n1) + ((p2*(1-p2)) / n2))

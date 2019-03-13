@@ -10,7 +10,7 @@ from ANOVA import anova
 
 # Taller
 # print(binomial_distribution(10, 0.05, 2))
-## Si me piden menor a 2
+# Si me piden menor a 2
 # print(acumulated_binomial(range(0, 3), 10, 0.05))
 
 '''Aqui es si me piden mayor a algo en poisson'''
@@ -19,3 +19,13 @@ from ANOVA import anova
 #     sum += poisson(i, 10.0)
 
 # print(1 - sum)
+
+# Taller
+'''
+1) 
+Supongamos que la probabilidad de tener una unidad defectuosa en una línea de
+ensamblaje es de 0.05. Si el conjunto de unidades terminadas constituye un conjunto de
+ensayos independientes
+
+'''
+print

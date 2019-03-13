@@ -55,7 +55,7 @@ import math
 # print(intervals.get_sample_length_p_m(1.64, 750.0, 100, 0))
 
 # print(hipotesis.get_z_two_queues(298.10, 312.0, 97.30, 200.0))
-# print(distributions.when_get_x(0, 1, 0.95))
+#  print(distributions.when_get_x(0, 1, 0.95))
 # print(hipotesis.get_z_two_queues(31366.0, 31000, 1894.0, 100))
 # print(hipotesis.get_p(31366.0, 31000.0, 1894.0, 100))
 # print(hipotesis.get_z_two_queues(492.0/800.0, 0.6, ))
@@ -71,12 +71,18 @@ import math
 # print(intervals.interval_poblational_average_t(1275.0, 235.0, 12, 0.95))
 # print( intervals.interval_poblational_average_t(15.2, 0.86, 22, 0.95) )
 # print(hipotesis.get_z_two_queues(41.17, 40.0, 4.71, 15))
-n1 = 100.0
-x_1 = 17.2
-s_1 = 5.3
+n1 = 15
+x_1 = 15.3
+s2 = 3.5
 
-n2 = 75.0
-x_2 = 19.4
-s_2 = 4.5
-proof_routes = hipotesis.proof_diff_means(x_1, x_2, 1.96, s_1**2, s_2**2, n1, n2)
-print(proof_routes)
+n2 = 10
+x_2 = 17.1
+s22 = 3.9
+alpha = 0.95
+df = n1 + n2 - 2
+
+proof_onz = hipotesis.proof_diff_means_t(s2, s22, n1, n2, x_1, x_2, 2.069)
+print(proof_onz)
+
+# df = hipotesis.degree_free_variance_diff(100.2**0.5, 121.3**0.5, 12, 15)
+# print(df)
